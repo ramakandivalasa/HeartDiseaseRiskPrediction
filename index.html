@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <style>
+        body { font-family: Arial; background: #f0f8ff; padding: 40px; }
+        h2 { color: #333; }
+        form { background: #fff; padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; }
+        input, select { width: 100%; padding: 10px; margin-bottom: 15px; }
+        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <center><h2>Heart Disease Prediction System</h2></center>
+    <form action="/predict" method="post">
+        <label>Age:</label>
+        <input type="number" name="age" required>
+
+        <label>Sex:</label>
+        <select name="sex">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+
+        <label>Chest Pain Type:</label>
+        <select name="chest_pain">
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-Anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+        </select>
+
+        <label>Fasting Blood Sugar > 120 mg/dL:</label>
+        <select name="fbs">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label>Exercise Induced Angina:</label>
+        <select name="exang">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label>Slope of Peak ST Segment:</label>
+        <select name="slope">
+            <option value="1">Upsloping</option>
+            <option value="2">Flat</option>
+            <option value="3">Downsloping</option>
+        </select>
+
+        <label>Maximum Heart Rate Achieved:</label>
+        <input type="number" name="maxhr" required>
+
+        <label>Oldpeak (Depression):</label>
+        <input type="number" name="oldpeak" step="0.1" required>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
