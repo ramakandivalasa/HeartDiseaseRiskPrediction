@@ -15,7 +15,7 @@ model = pickle.load(open(model_path, "rb"))
 scaler_path = os.path.join(os.path.dirname(__file__), "scaler.pkl")
 scaler = pickle.load(open(scaler_path, "rb"))
 # Preprocessing function to match training data
-def preprocess_input(user_input):
+def preprocess_input(user_input,scaler):
     import pandas as pd
     from sklearn.preprocessing import StandardScaler
 
