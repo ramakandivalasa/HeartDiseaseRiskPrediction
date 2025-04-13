@@ -41,7 +41,7 @@ def preprocess_input(user_input):
     categorical_variables = ["Sex", "ChestPain", "Fbs", "ExAng", "Slope", "AgeGroups"]
 
     # Scale quantitative columns
-    scaler = StandardScaler()
+    
     df[quantitative_variables] = scaler.transform(df[quantitative_variables])
 
     # Convert categorical columns to dummies
@@ -92,7 +92,7 @@ def predict():
         }
 
         # Preprocess input
-        input_df = preprocess_input(data)
+        input_df = preprocess_input(data,scaler)
 
         # Predict
         prediction = model.predict(input_df)[0]
